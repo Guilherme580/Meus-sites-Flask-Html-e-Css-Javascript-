@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <header>
+            <h1>🌸 Seja Bem-Vinda ao Nosso Salão</h1>
+            <p>Faça seu cadastro e deixe seu momento de <br>beleza ainda mais prático, rápido e especial.</p>
+        </header>
+        <article>
+            <div id="formulario">
+                <h2>Preencha o Formulario</h2>
+            <form action="/cadastrar" method="post">
+                <label>Nome</label>
+                <input type="text" name="nome" required>
+                <label>Idade</label>
+                <input type="number" name="idade" required>
+                <label>Serviço</label>
+                <select name="servico" required>
+                    <option value="" selected disabled></option>
+                    <option value="cabelos">Cabelos</option>
+                    <option value="unhas_pes">Unhas dos pés</option>
+                    <option value="unhas_maos">Manicure</option>
+                </select>
+                <label>Dia</label>
+                <select name="dia" required>
+                    <option value="" selected disabled></option>
+                    <option value="segunda">Segunda-feira</option>
+                    <option value="terca">Terça-feira</option>
+                    <option value="quarta">Quarta-feira</option>
+                    <option value="quinta">Quinta-feira</option>
+                    <option value="sexta">Sexta-feira</option>
+                    <option value="sabado">Sábado</option>
+                </select>
+                <label>Horario</label>
+                <select name="horario" required>
+                    <option value="" selected disabled></option>
+                    <option value="08:00">08:00 - Manhã</option>
+                    <option value="08:30">08:30 - Manhã</option>
+                    <option value="09:00">09:00 - Manhã</option>
+                    <option value="09:30">09:30 - Manhã</option>
+                    <option value="10:00">10:00 - Manhã</option>
+                    <option value="10:30">10:30 - Manhã</option>
+                    <option value="11:00">11:00 - Manhã</option>
+                    <option value="11:30">11:30 - Manhã</option>
+                    <option value="13:00">13:00 - Tarde</option>
+                    <option value="13:30">13:30 - Tarde</option>
+                    <option value="14:00">14:00 - Tarde</option>
+                    <option value="14:30">14:30 - Tarde</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        </article>
+        <footer>
+            <h4>Criador</h4>
+            <h4>links profissionais:</h4>
+            <ul> 
+                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+                <li><a href="https://www.99freelas.com.br/dashboard" target="_blank">99Freelas</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank">Instagram</a></li>
+            </ul>
+        </footer>
+    </main>
+</body>
+</html>

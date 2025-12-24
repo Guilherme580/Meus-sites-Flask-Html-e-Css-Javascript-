@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Status</title>
+</head>
+<style>
+    h1, p{
+        text-align: center;
+        margin: auto;
+        padding: 12%;
+        text-decoration: underline;
+        color: black;
+    }
+    body{
+        background-color: #063e6bde;
+    }
+    header{
+        display: block;
+        padding: 8%;
+        margin: 8%;
+        
+        border-style: dotted;
+        border-image-source: #24303a;
+        border-radius: 12px;
+        box-shadow: 0px 0px 3px 2px black;
+        background-color: rgba(255, 255, 255, 0.63);
+    }
+    button{
+        margin-left: 32%;
+        padding-right: 4%;
+    }
+    @media (max-width: 600px){
+        button{
+            display: flex;
+            flex-direction: column;
+            margin-left: 30%;
+        }
+    }
+</style>
+<body>
+    <main>
+        <header>
+            <button>
+                <a href="" target="_self">
+                    <h1>{{pessoa.status}}</h1>
+                </a>
+            </button>
+            <br>
+            <p>"Clique em "{{pessoa.status}}" para atualizar a pagína."</p>
+        </header>
+    </main>
+</body>
+</html>
