@@ -3,7 +3,6 @@ function carregar() {
     var agora = new Date()
     var horario = agora.getHours()
     var minutos = agora.getMinutes()
-    horario = 0
     // espaços a seren modificados
     var corpo = document.getElementById("corpo")
     var msg = document.getElementById("msg")
