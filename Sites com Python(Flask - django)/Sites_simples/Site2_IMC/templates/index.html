@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        div{
+            text-align: justify;
+            padding: 2em;
+            border: dotted;
+            border-radius: 5px 9px;
+            border-color: black;
+            color: white;
+            background-color: rgb(11, 154, 154);
+            margin-left: 35%;
+            margin-right: 35%;
+            box-shadow: 5px 0px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <form action="/" method="POST">
+            <label>Peso(kg)</label>
+            <input type="number" name="peso" step="any" required><br><br>
+            
+            <label>Altura(metros)</label>
+            <input type="any" name="altura" step="any" required><br><br>
+            <button type="submit">IMC..?</button>
+        </form>
+        {% if resposta is not none %}
+            <h2>{{resultado}}</h2>
+        {% endif %}
+                
+    </div>
+</body>
+</html>
