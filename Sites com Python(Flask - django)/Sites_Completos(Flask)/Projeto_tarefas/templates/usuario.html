@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuário</title>
+    <style>
+        .popup{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .popup-conteudo{
+            background: white;
+            width: 300px;
+            padding: 30px;
+            margin: 120px auto;
+            border: 2px solid rgba(0, 0, 0, 0.363);
+            border-radius: 10px;
+        }
+        h2, h3{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: x-large;
+        }
+        p{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h2>{{dados.email}}</h2>
+    <p>{{dados.nome}}</p>
+
+    <button id="abripopup">+</button>
+    <div id="popup" class="popup">
+        <div class="popup-conteudo">
+            <button id="fechapopup">x</button> 
+            <h3>Nova tarefa</h3>
+            <input id="titulo" placeholder="Nome da tarefa" type="text" required>
+            <textarea id="descricao" placeholder="Descrição" required></textarea>
+            <div>
+                 <label>
+                    <input type="radio" name="status" value="nao" checked>
+                    Não concluida
+                 </label>
+                 <label>
+                    <input type="radio" name="status" value="sim">
+                    Concluida
+                 </label>
+            </div>
+            <button onclick="enviar_dados()">Confirmar</button>
+        </div>
+    </div>
+
+    <div id="lista_tarefas">
+    {% for tarefa in tarefas %}
+        <div>
+            <h3>{{ tarefa.titulo or "Sem título" }}</h3>
+            <p>{{ tarefa.descricao or "Sem descrição" }}</p>
+            <p>Status: {{ tarefa.status or "Não definido" }}</p>
+        </div>
+    {% endfor %}
+</div>
+<button><a href="/tarefas_usuario">enviar</a></button>
+<script>
+    const popup = document.getElementById("popup")
+    const abri = document.getElementById("abripopup")
+    const fecha = document.getElementById("fechapopup")
+
+    abri.onclick = () => popup.style.display = "block"
+    fecha.onclick = () => popup.style.display = "none"
+
+    function enviar_dados(){
+        popup.style.display = "none"
+
+        let titulo = document.getElementById("titulo").value.trim()
+        let descricao = document.getElementById("descricao").value.trim()
+        let confirmar = document.querySelector('input[name="status"]:checked').value
+
+        if(!titulo) return alert("Digite o título da tarefa!")
+
+        fetch("/usuario", {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({
+                titulo: titulo,
+                descricao: descricao,
+                statusSelecionado: confirmar
+            })
+        })
+        .then(res => {
+            if(res.ok){
+                const lista = document.getElementById("lista_tarefas")
+                const tarefaDiv = document.createElement("div")
+                tarefaDiv.innerHTML = `
+                    <h3>${titulo}</h3>
+                    <p>${descricao}</p>
+                    <p>Status: ${confirmar}</p>
+                `
+                lista.appendChild(tarefaDiv)
+
+                // limpa campos do formulário
+                document.getElementById("titulo").value = ""
+                document.getElementById("descricao").value = ""
+            } else {
+                alert("Erro ao salvar a tarefa!")
+            }
+        })
+        .catch(err => console.error("Erro no fetch:", err))
+    }
+</script>
+
+</body>
+</html>

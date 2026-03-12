@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>    
+    <video autoplay muted loop playsinline id="meuVideoFundo">
+        <source src="/static/videos/ondas-roxas.mp4" type="video/mp4">
+    </video>
+
+    <form action="/login" method="post">
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <input type="text" name="username" placeholder="Usuário" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

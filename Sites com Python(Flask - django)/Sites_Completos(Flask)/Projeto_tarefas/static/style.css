@@ -1,0 +1,34 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 15%;
+    padding: 3%;
+    background-color: rgba(42, 138, 216, 0.342);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.705);
+}
+
+input, button{
+    display: block;
+    margin-left: 5%;
+    margin-top: 3%;
+    padding: 1%;
+}
+
+#meuVideoFundo{
+    position: fixed;    /* Fixa o vídeo no fundo da tela */
+    top: 0;
+    left: 0;
+    width: 100%;        /* Ocupa toda a largura */
+    height: 100%;       /* Ocupa toda a altura */
+    object-fit: cover;  /* Faz o vídeo preencher a tela sem distorcer (estilo background-size: cover) */
+    z-index: -1;        /* Joga o vídeo para a camada de TRÁS de todos os elementos */
+    filter: brightness(60%);
+}
+
+
+    

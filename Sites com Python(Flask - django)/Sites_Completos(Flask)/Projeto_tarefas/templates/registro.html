@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <video autoplay muted loop playsinline id="meuVideoFundo">
+        <source src="/static/videos/ondas-azuis.mp4" type="video/mp4">
+    </video>
+
+    <form action="/registro" method="post">
+        {{form.email}}
+        {{form.senha}}
+        {{form.nome}}
+        {{form.botao}}
+    </form>
+</body>
+</html>
