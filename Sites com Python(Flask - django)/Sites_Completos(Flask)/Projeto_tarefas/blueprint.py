@@ -15,7 +15,7 @@ def login_admin():
     if request.method == "POST":
         senha = request.form["senha_admin"]
         
-        if senha == os.getenv("admin"):
+        if senha == os.getenv("senha_admin"):
             usuaio = User.query.first()
             login_user(usuaio)
             

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, flash
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.base import Bootstrap4Theme
@@ -61,6 +61,9 @@ def registro():
             login_user(novo_usuario) 
             return redirect("/usuario")
         
+        
+    
+        flash("Email ou nome de usuário já cadastrados.", "error")
         return redirect("/registro")
         
     return render_template("registro.html", form=formulario)
@@ -74,7 +77,7 @@ def login():
         username = request.form["username"].strip()
            
         usuario = User.query.filter_by(email=email, nome=username).first()
-        if usuario is not None  and check_password_hash(usuario.senha, senha):
+        if usuario is not None and check_password_hash(usuario.senha, senha):
             login_user(usuario)
             return redirect(url_for("usuario"))
     
@@ -106,6 +109,7 @@ def usuario():
 @login_required
 def tarefas_usuario():
     tarefas = Tarefa.query.filter_by(usuario_id=current_user.id).all()
+    # tarefas = current_user.tarefas
     lista = [{"titulo": t.titulo, "descricao": t.descricao, "status": t.status} for t in tarefas]
     return render_template("tarefas_usuario.html", lista=lista)
 

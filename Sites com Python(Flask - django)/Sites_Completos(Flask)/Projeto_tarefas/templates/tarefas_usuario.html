@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/static/tarefas.css">
+    <title>Tarefas do Usuário</title>
 </head>
 <body>
-    {% for item in lista %}
-        <p>{{ item.titulo }}</p>
-        <p>{{ item.descricao }}</p>
-        <p>{{ item.status }}</p>
-    {% endfor %}
+    <h2>Suas Tarefas</h2>
+    <div id="lista_tarefas">
+        {% for item in lista %}
+        <div class="tarefa-card">
+            <h3>{{ item.titulo }}</h3>
+            <p>{{ item.descricao }}</p>
+            <p>Status: {{ item.status }}</p>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

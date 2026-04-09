@@ -1,0 +1,193 @@
+/* 1. CONFIGURAÇÃO GERAL E FUNDO */
+body {
+    background-color: #0b1120; /* Azul Marinho Profundo */
+    color: #e2e8f0;
+    margin: 0;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 2. ESTILIZAÇÃO DOS TEXTOS (HIERARQUIA) */
+h2 { /* Email do Usuário */
+    color: #38bdf8;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+}
+
+p { /* Nome e Descrições */
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* 3. BOTÃO DE ADICIONAR (+) ESTILO FLUTUANTE */
+#abripopup {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a8ad8, #38bdf8);
+    color: white;
+    font-size: 32px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, hover 0.3s;
+    z-index: 100;
+}
+
+#abripopup:hover {
+    transform: scale(1.1) rotate(90deg);
+}
+
+/* 4. LISTA DE TAREFAS (GRID DE CARDS) */
+#lista_tarefas, body > div:not(.popup) {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre as tarefas */
+    margin-top: 20px;
+}
+
+/* Cada Card de Tarefa */
+.tarefa-card {
+    background: rgba(30, 41, 59, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tarefa-card:hover {
+    border-color: #38bdf8;
+    background: rgba(30, 41, 59, 0.8);
+    transform: translateY(-5px);
+}
+
+.tarefa-card h3 {
+    color: #f8fafc;
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
+}
+
+.tarefa-card p {
+    color: #94a3b8;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.tarefa-card p:last-child {
+    color: #38bdf8;
+    font-weight: bold;
+}
+
+/* 5. POPUP (MODAL) DARK */
+.popup {
+    background: rgba(2, 6, 23, 0.85) !important; /* Fundo escuro atrás do popup */
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-conteudo {
+    background: #1e293b !important; /* Cor sólida para o form */
+    border: 2px solid #38bdf8 !important;
+    border-radius: 20px !important;
+    padding: 40px !important;
+    width: 90% !important;
+    max-width: 450px !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Inputs dentro do Popup */
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 15px 0;
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.5);
+}
+
+/* Botão Confirmar */
+.popup-conteudo button:last-child {
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.popup-conteudo button:last-child:hover {
+    background: #0ea5e9;
+    letter-spacing: 1px;
+}
+
+/* Botão Fechar (X) */
+#fechapopup {
+    background: transparent;
+    color: #94a3b8;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    float: right;
+}
+
+/* 6. BOTÃO DE ENVIAR (REDESENHADO) */
+button:has(a) {
+    background: transparent;
+    border: 1px solid #38bdf8;
+    padding: 10px 25px;
+    border-radius: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:has(a):hover {
+    background: rgba(56, 189, 248, 0.1);
+}
+
+button a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Ajuste para o radio button */
+label {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
