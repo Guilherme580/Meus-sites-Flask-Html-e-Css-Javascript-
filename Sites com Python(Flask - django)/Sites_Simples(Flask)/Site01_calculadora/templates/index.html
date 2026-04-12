@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1>somar dois valores</h1>
+        <form action="/" method="POST" >
+            <label>valor 1</label>
+            <input type="number" name="valor1" required><br><br>
+            <label>valor 2</label>
+            <input type="number" name="valor2" required><br><br>
+            <button type="submit">Somar</button>
+        </form>
+        {% if resultado is not none %}
+            <h2>Resultado: {{resul}}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>

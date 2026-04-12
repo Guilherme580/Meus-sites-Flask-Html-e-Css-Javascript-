@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Sucesso</title>
+</head>
+<body>
+    <div id="formatacao">
+        <header>
+            <h2>Seu Cadastro foi feito com sucesso</h2>
+        </header>
+        {%if nome is not none %}
+            <p>Seu nme é: {{nome}}</p>
+            <p>Sua idade é: {{idade}}</p>
+            <p>E a sua situacao é: {{situacao}}</p>
+        {%endif%}
+        <button><a href="/">Voltar</a></button>
+    </div>
+</body>
+</html>
