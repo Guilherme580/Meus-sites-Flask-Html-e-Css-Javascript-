@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Gráfico com Plotly</title>
+</head>
+<body>
+
+    <h1>Meu gráfico</h1>
+
+    <div>{{ grafico|safe }}</div>
+    <div>{{ tabela|safe }}</div>
+</body>
+</html>

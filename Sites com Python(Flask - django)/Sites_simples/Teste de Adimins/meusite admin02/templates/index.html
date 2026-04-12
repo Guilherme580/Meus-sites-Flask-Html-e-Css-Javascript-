@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clientes</title>
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+
+  {% for c in clientes %}
+    <div>
+      <strong>Nome:</strong> {{ c.nome }}<br>
+      <strong>Telefone:</strong> {{ c.telefone }}<br>
+      <strong>Email:</strong> {{ c.email }}
+    </div>
+    <hr>
+  {% else %}
+    <p>Nenhum cliente encontrado.</p>
+  {% endfor %}
+</body>
+</html> 
