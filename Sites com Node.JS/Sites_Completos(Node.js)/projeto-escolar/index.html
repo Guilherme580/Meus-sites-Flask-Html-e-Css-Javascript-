@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zina Aita - Modernismo</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0A447C;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 15px;
+            background-color: #ffffff;
+            border-bottom: 3px dashed #333333;
+        }
+
+        header h2 {
+            margin: 0;
+            color: #222222;
+            font-size: 1.5rem;
+        }
+
+        main {
+            background-image: url('https://picsum.photos');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px 15px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .conteudo-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        ul.triangulo {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.triangulo li {
+            margin-bottom: 35px;
+        }
+
+        ul.triangulo li::before {
+            content: "▲ ";
+            color: #ff5722;
+            font-size: 14px;
+            display: inline-block;
+            margin-right: 6px;
+        }
+
+        ul.triangulo h3 {
+            display: inline;
+            font-size: 1.3rem;
+            color: #333333;
+        }
+
+        ul.triangulo p {
+            line-height: 1.6;
+            color: #444444;
+            font-size: 1rem;
+            margin-top: 15px;
+            text-align: justify;
+        }
+
+        .img-arte {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto 0 auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px #438bce;
+        }
+
+        .destaque-nome {
+            color: #ff5722;
+            font-weight: bold;
+            cursor: help;
+            border-bottom: 1px dotted #ff5722;
+        }
+
+        footer {
+            background-color: #111111;
+            padding: 30px 15px;
+            text-align: center;
+            border-top: 3px solid #ff5722;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .footer-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease, background 0.2s ease;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 13px;
+            display: block;
+            text-align: center;
+        }
+
+        .footer-links li a:hover {
+            color: #ff5722;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .fundo-absoluto {
+            background-color: #050505;
+            color: #888888;
+            padding: 15px;
+            text-align: center;
+            font-size: 12px;
+            border-top: 1px solid #222222;
+        }
+
+        .fundo-absoluto p {
+            margin: 4px 0;
+        }
+
+        .fundo-absoluto .nome-dev {
+            color: #aaaaaa;
+            font-weight: bold;
+        }
+
+        @media (min-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            header h2 {
+                font-size: 1.8rem;
+            }
+
+            main {
+                padding: 40px 20px;
+            }
+
+            .conteudo-container {
+                padding: 30px;
+            }
+
+            ul.triangulo h3 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Zina Aita uma das figuras mais desconhecidas do modernismo brasileiro</h2>
+    </header>
+
+    <main>
+        <div class="conteudo-container">
+            <ul class="triangulo">
+                <li>
+                    <h3>Quem é Zina Aita?</h3>
+                    <p>
+                        <span class="destaque-nome"
+                            title="Tereza Aita nasceu em Belo Horizonte em 1900, viveu no Brasil e na Itália, e faleceu em Nápoles no ano de 1967.">Zina
+                            Aita</span>, cujo nome de batismo era Tereza Aita, foi uma pintora, desenhista e ceramista
+                        brasileira nascida em Belo Horizonte no ano de 1900. Ela se consolidou como uma das figuras
+                        femininas mais importantes da primeira geração do modernismo no Brasil. Embora o cenário mineiro
+                        da época fosse dominado por grandes escritores e poetas, Zina representou de forma pioneira a
+                        força das artes visuais do estado. Sua formação artística ocorreu na Itália, passando por
+                        cidades como Roma, Florença e Veneza, o que trouxe uma bagagem estética diferenciada para a sua
+                        produção em solo brasileiro.
+                    </p>
+                    <img src="/imgs/Zina Aita.jpg" alt="Zina Aita" width="300" class="img-arte">
+                </li>
+                <li>
+                    <h3>O que ela fez?</h3>
+                    <p>
+                        A artista teve um papel crucial no desenvolvimento da arte moderna brasileira ao realizar, em
+                        1920, uma exposição individual em Belo Horizonte e no Rio de Janeiro. Esse evento na capital
+                        mineira é considerado pelos historiadores como o primeiríssimo impulso do movimento modernista
+                        em Minas Gerais, ocorrendo antes mesmo que os poemas de Carlos Drummond de Andrade ganhassem
+                        projection. Zina conectou-se rapidamente com o núcleo artístico de São Paulo e do Rio de
+                        Janeiro, construindo laços de amizade com nomes como <span class="destaque-nome"
+                            title="Anita Malfatti nasceu em São Paulo em 1889, viveu produzindo artes de vanguarda e faleceu em São Paulo no ano de 1964.">Anita
+                            Malfatti</span>, Mário de Andrade e Manuel Bandeira.
+                    </p>
+                    <p>
+                        Sua contribuição mais marcante para a história da arte nacional foi a participação direta na
+                        Semana de Arte Moderna de 1922, realizada no Teatro Municipal de São Paulo. Ela expôs oito obras
+                        no evento, incluindo a tela "Homens Trabalhando" (também conhecida como "A Sombra"). Além disso,
+                        Zina colaborou com ilustrações para a revista Klaxon, o principal veículo de difusão das ideias
+                        modernistas paulistas. Sua linguagem visual transitava de maneira única entre o
+                        pós-impressionismo e o art nouveau, explorando técnicas diversas como o óleo sobre tela, a
+                        aquarela, o desenho, a tapeçaria e a cerâmica. Em 1924, ela retornou para a Itália para assumir
+                        os negócios de cerâmica de sua família, o que acabou por afastá-la gradualmente do circuito
+                        cultural brasileiro.
+                    </p>
+                    <img src="/imgs/trabalhadores.jpg" alt="Trabalhadores" width="300" class="img-arte">
+                </li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <h3>Fontes: </h3>
+        <ul class="footer-links">
+            <li><a href="https://www.youtube.com/watch?v=2lFpeKIrrtY" target="_blank">Vênus em Arte por Luly Lage</a></li>
+            <li><a href="https://fcs.mg.gov.br/historia-da-arte-e-modernismo-no-brasil-caso-do-desaparecimento-de-zina-aita/" target="_blank">Palácio das Artes</a></li>
+            <li><a href="https://prezi.com/p/-bf8lcqxbad4/artistas-menos-conhecidos-do-modernismo-brasileiro/" target="_blank">Prezi</a></li>
+        </ul>
+    </footer>
+
+    <div class="fundo-absoluto">
+        <p>&copy; 2023 Zina Aita - Modernismo. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <span class="nome-dev">Guilherme Valente</span>.</p>
+    </div>
+
+    <audio src="/music/vilas lobo.mpeg" autoplay loop onplay="this.volume = 0.2;"></audio>
+
+</body>
+</html>
